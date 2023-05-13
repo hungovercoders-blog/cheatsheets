@@ -70,7 +70,7 @@ spark.conf.set(
 
 # COMMAND ----------
 
-from pyspark.sql.functions import col, current_timestamp, collect_list, collect_set, explode
+from pyspark.sql.functions import col, current_timestamp, collect_list, collect_set, explode, split
 from datetime import datetime, timedelta
 
 # COMMAND ----------
@@ -213,10 +213,21 @@ display(df_beers_exploded)
 # DBTITLE 1,Get All Beers Drank by Each Name Using Collect Set (distinct)
 df_beers_collected = (
     df_beers_drank.groupBy("first_name")
-    .agg(collect_set("brewery_beer_drank"))
+    .agg(collect_set("brewery_beer_drank").alias("unique_beers_drank"))
     .orderBy("first_name")
 )
 display(df_beers_collected)
+
+# COMMAND ----------
+
+# DBTITLE 1,Split Brewers & Beers with Drop Columns & Filtered with StartsWith
+df_beers_split = (
+    df_beers_drank.withColumn("brewer", split(col("brewery_beer_drank"), "_")[0])
+    .withColumn("beer", split(col("brewery_beer_drank"), "_")[1])
+    .filter(col("brewery_beer_drank").startswith("tinyrebel"))
+    .drop("timestamp", "last_updated", "brewery_beer_drank")
+)
+display(df_beers_split)
 
 # COMMAND ----------
 
@@ -229,3 +240,20 @@ display(df_beers_collected)
 # COMMAND ----------
 
 # MAGIC %md ## RePartioning
+
+# COMMAND ----------
+
+# DBTITLE 1,Get Partitions of DataFrame
+df_beers_drank.rdd.getNumPartitions()
+
+# COMMAND ----------
+
+# DBTITLE 1,Reduce Partitions Using Coalesce without Shuffle
+df_beers_drank_coalesce = df_beers_drank.coalesce(2)
+df_beers_drank_coalesce.rdd.getNumPartitions()
+
+# COMMAND ----------
+
+# DBTITLE 1,Reduce or Increase Partitions Using Repartition Always with Shuffle
+df_beers_drank_repartition = df_beers_drank.repartition(8)
+df_beers_drank_repartition.rdd.getNumPartitions()
