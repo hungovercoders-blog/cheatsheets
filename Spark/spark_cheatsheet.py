@@ -70,7 +70,14 @@ spark.conf.set(
 
 # COMMAND ----------
 
-from pyspark.sql.functions import col, current_timestamp, collect_list, collect_set, explode, split
+from pyspark.sql.functions import (
+    col,
+    current_timestamp,
+    collect_list,
+    collect_set,
+    explode,
+    split,
+)
 from datetime import datetime, timedelta
 
 # COMMAND ----------
@@ -155,22 +162,28 @@ scratch_file_path = "dbfs:/myscratchpad/"
 # COMMAND ----------
 
 # DBTITLE 1,Write to CSV
-df_beers_drank.write.mode("overwrite").option("header","true").csv(scratch_file_path+"/csv")
+df_beers_drank.write.mode("overwrite").option("header", "true").csv(
+    scratch_file_path + "/csv"
+)
 
 # COMMAND ----------
 
 # DBTITLE 1,Red from CSV with Show
-spark.read.option("header","true").option("inferSchema","true").csv(scratch_file_path+"/csv").show()
+spark.read.option("header", "true").option("inferSchema", "true").csv(
+    scratch_file_path + "/csv"
+).show()
 
 # COMMAND ----------
 
 # DBTITLE 1,Write to Delta
-df_beers_drank.write.format("delta").mode("overwrite").save(scratch_file_path+"/delta")
+df_beers_drank.write.format("delta").mode("overwrite").save(
+    scratch_file_path + "/delta"
+)
 
 # COMMAND ----------
 
 # DBTITLE 1,Read from Delta with Show No Truncate Five Rows
-spark.read.format("delta").load(scratch_file_path+"/delta").show(truncate=False,n=5)
+spark.read.format("delta").load(scratch_file_path + "/delta").show(truncate=False, n=5)
 
 # COMMAND ----------
 
@@ -182,7 +195,7 @@ try:
 except:
     print("Good: Data Cleared!")
 else:
-    raise("Bad: Data Remains!")
+    raise ("Bad: Data Remains!")
 
 # COMMAND ----------
 
@@ -191,7 +204,9 @@ else:
 # COMMAND ----------
 
 # DBTITLE 1,Collect to Get all Rows and Pick First One from List of Rows
-first_brewer_beer_row = df_beers_drank.select(col("brewery_beer_drank")).distinct().collect()[0]
+first_brewer_beer_row = (
+    df_beers_drank.select(col("brewery_beer_drank")).distinct().collect()[0]
+)
 print(f"The first row is {first_brewer_beer_row}")
 first_brewer_beer = first_brewer_beer_row[0]
 print(f"The first value in the first row is {first_brewer_beer}")
@@ -199,13 +214,19 @@ print(f"The first value in the first row is {first_brewer_beer}")
 # COMMAND ----------
 
 # DBTITLE 1,Get All Beers Drank by Each Name Using Collect List (not distinct)
-df_beers_collected = df_beers_drank.groupBy("first_name").agg(collect_list("brewery_beer_drank").alias("brewery_beers_drank")).orderBy("first_name")
+df_beers_collected = (
+    df_beers_drank.groupBy("first_name")
+    .agg(collect_list("brewery_beer_drank").alias("brewery_beers_drank"))
+    .orderBy("first_name")
+)
 display(df_beers_collected)
 
 # COMMAND ----------
 
 # DBTITLE 1,Explode the Collected List Back!
-df_beers_exploded = df_beers_collected.select("first_name",explode("brewery_beers_drank")).orderBy("first_name")
+df_beers_exploded = df_beers_collected.select(
+    "first_name", explode("brewery_beers_drank")
+).orderBy("first_name")
 display(df_beers_exploded)
 
 # COMMAND ----------
