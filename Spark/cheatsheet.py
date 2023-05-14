@@ -56,7 +56,7 @@ spark.conf.set(
 # MAGIC %md ## Create Basic Dataframe
 # MAGIC * [Databricks Data Generator](https://github.com/databrickslabs/dbldatagen)
 # MAGIC
-# MAGIC The following will create a dataframe called df_beers_drank, a temporary SQL view called beers_drank and a pandas dataframe called pdf_beers_drank. This is all generated from the [fake_data notebook]($./fake_data).
+# MAGIC The following will create a dataframe called **df_beers_drank**, a temporary SQL view called **beers_drank**, a pandas dataframe called **pdf_beers_drank** and a reference data frame called **df_brewers**. This is all generated from the [fake_data notebook]($./fake_data).
 
 # COMMAND ----------
 
@@ -149,6 +149,12 @@ df_sort2 = (
     .sort(desc("brewery_beer_drank"))
 )
 display(df_sort2)
+
+# COMMAND ----------
+
+# DBTITLE 1,Drop Columns and Add A Constant as Column
+df_constant = df_beers_drank.drop("last_updated").withColumn("tax",lit(17.5))
+display(df_constant)
 
 # COMMAND ----------
 
