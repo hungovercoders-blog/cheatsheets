@@ -77,6 +77,14 @@ from pyspark.sql.functions import (
     collect_set,
     explode,
     split,
+    sum,
+    min,
+    desc,
+    cast,
+    date_format,
+    date_add,
+    year,
+    dayofweek,
 )
 from datetime import datetime, timedelta
 
@@ -91,6 +99,21 @@ df_beers_drank.printSchema()
 
 # COMMAND ----------
 
+# DBTITLE 1,Show Data
+df_beers_drank.show(n=5, truncate=False)
+
+# COMMAND ----------
+
+# DBTITLE 1,Display Data
+display(df_beers_drank)
+
+# COMMAND ----------
+
+# DBTITLE 1,Summary Stats
+df_beers_drank.summary().show()
+
+# COMMAND ----------
+
 # DBTITLE 1,Query SQL Via SQL Method in Python
 display(spark.sql("SELECT * FROM beers_drank LIMIT 10"))
 
@@ -99,34 +122,39 @@ display(spark.sql("SELECT * FROM beers_drank LIMIT 10"))
 # DBTITLE 1,Query Using SQL Magic Command with Group By
 # MAGIC %sql
 # MAGIC SELECT
-# MAGIC   brewery_beer_drank,
+# MAGIC   brewery_beer,
 # MAGIC   sum(quantity_pint) AS pints_drank
 # MAGIC FROM
 # MAGIC   beers_drank
 # MAGIC GROUP BY
-# MAGIC   brewery_beer_drank
+# MAGIC   brewery_beer
 
 # COMMAND ----------
 
 # DBTITLE 1,Select DataFrame Columns in all Sorts of Ways and Filter
 df_select = df_beers_drank.select(
-    col("first_name"), df_beers_drank.brewery_beer_drank, "timestamp"
+    col("first_name"), df_beers_drank.brewery_beer, "timestamp"
 ).filter(col("quantity_pint") == 1)
 display(df_select)
 
 # COMMAND ----------
 
+# DBTITLE 1,Explain a Query Plan
+df_select.explain()
+
+# COMMAND ----------
+
 # DBTITLE 1,Beers Drank Aggregated Grouped by Brewer with Or Filter
 df_group = (
-    df_beers_drank.groupBy(col("brewery_beer_drank"))
+    df_beers_drank.groupBy(col("brewery_beer"))
     .agg(
         sum(col("quantity_pint")).alias("pints_drank"),
         min(col("timestamp")).alias("earliest_date"),
     )
     .filter(
         (
-            col("brewery_beer_drank").contains("crafty")
-            | col("brewery_beer_drank").contains("flower")
+            col("brewery_beer").contains("crafty")
+            | col("brewery_beer").contains("flower")
         )
     )
 )
@@ -144,16 +172,16 @@ display(df_sort1)
 
 # DBTITLE 1,Remove Duplicates and Order Desc with dropDuplicates on Specific Columns and Sort
 df_sort2 = (
-    df_beers_drank.select("brewery_beer_drank", "first_name", "quantity_pint")
-    .dropDuplicates(["brewery_beer_drank", "quantity_pint"])
-    .sort(desc("brewery_beer_drank"))
+    df_beers_drank.select("brewery_beer", "first_name", "quantity_pint")
+    .dropDuplicates(["brewery_beer", "quantity_pint"])
+    .sort(desc("brewery_beer"))
 )
 display(df_sort2)
 
 # COMMAND ----------
 
 # DBTITLE 1,Drop Columns and Add A Constant as Column
-df_constant = df_beers_drank.drop("last_updated").withColumn("tax",lit(17.5))
+df_constant = df_beers_drank.drop("last_updated").withColumn("tax", lit(17.5))
 display(df_constant)
 
 # COMMAND ----------
@@ -175,9 +203,9 @@ df_beers_drank.write.mode("overwrite").option("header", "true").csv(
 # COMMAND ----------
 
 # DBTITLE 1,Red from CSV with Show
-spark.read.option("header", "true").option("inferSchema", "true").csv(
-    scratch_file_path + "/csv"
-).show()
+spark.read.option("header", "true").option("inferSchema", "true").option(
+    "delimiter", ","
+).csv(scratch_file_path + "/csv").show()
 
 # COMMAND ----------
 
@@ -211,7 +239,7 @@ else:
 
 # DBTITLE 1,Collect to Get all Rows and Pick First One from List of Rows
 first_brewer_beer_row = (
-    df_beers_drank.select(col("brewery_beer_drank")).distinct().collect()[0]
+    df_beers_drank.select(col("brewery_beer")).distinct().collect()[0]
 )
 print(f"The first row is {first_brewer_beer_row}")
 first_brewer_beer = first_brewer_beer_row[0]
@@ -222,7 +250,7 @@ print(f"The first value in the first row is {first_brewer_beer}")
 # DBTITLE 1,Get All Beers Drank by Each Name Using Collect List (not distinct)
 df_beers_collected = (
     df_beers_drank.groupBy("first_name")
-    .agg(collect_list("brewery_beer_drank").alias("brewery_beers_drank"))
+    .agg(collect_list("brewery_beer").alias("brewery_beers_drank"))
     .orderBy("first_name")
 )
 display(df_beers_collected)
@@ -240,7 +268,7 @@ display(df_beers_exploded)
 # DBTITLE 1,Get All Beers Drank by Each Name Using Collect Set (distinct)
 df_beers_collected = (
     df_beers_drank.groupBy("first_name")
-    .agg(collect_set("brewery_beer_drank").alias("unique_beers_drank"))
+    .agg(collect_set("brewery_beer").alias("unique_beers_drank"))
     .orderBy("first_name")
 )
 display(df_beers_collected)
@@ -249,10 +277,10 @@ display(df_beers_collected)
 
 # DBTITLE 1,Split Brewers & Beers with Drop Columns & Filtered with StartsWith
 df_beers_split = (
-    df_beers_drank.withColumn("brewer", split(col("brewery_beer_drank"), "_")[0])
-    .withColumn("beer", split(col("brewery_beer_drank"), "_")[1])
-    .filter(col("brewery_beer_drank").startswith("tinyrebel"))
-    .drop("timestamp", "last_updated", "brewery_beer_drank")
+    df_beers_drank.withColumn("brewer", split(col("brewery_beer"), "_")[0])
+    .withColumn("beer", split(col("brewery_beer"), "_")[1])
+    .filter(col("brewery_beer").startswith("tinyrebel"))
+    .drop("timestamp", "last_updated", "brewery_beer")
 )
 display(df_beers_split)
 
@@ -262,7 +290,85 @@ display(df_beers_split)
 
 # COMMAND ----------
 
+# DBTITLE 1,Simple date and time functions
+df_dates = (
+    df_beers_drank.withColumn("date_cast", col("timestamp").cast("date"))
+    .withColumn("date_format", date_format(col("timestamp"), "dd-MMM-yyyy"))
+    .withColumn("date_add", date_add(col("timestamp"), 1))
+    .withColumn("year", year(col("timestamp")))
+    .withColumn("dayofweek", dayofweek(col("timestamp")))
+).select("timestamp", "date_cast", "date_format", "date_add", "year", "dayofweek")
+display(df_dates)
+
+# COMMAND ----------
+
 # MAGIC %md ## Create Functions
+
+# COMMAND ----------
+
+# DBTITLE 1,Create Simple Function
+import random
+
+
+def random_beer_reaction():
+    reaction = ["bleh!", "tasty!", "woshiss??"]
+    i = random.randint(0, 2)
+    return reaction[i]
+
+
+random_beer_reaction()
+
+# COMMAND ----------
+
+# DBTITLE 1,Create Simple Function with Type Hints
+# Our input/output is a string
+@udf("string")
+def random_beer_reaction_tudf(beer: str) -> str:
+    reaction = ["bleh!", "tasty!", "woshiss??"]
+    i = random.randint(0, 2)
+    return reaction[i]
+
+# COMMAND ----------
+
+# DBTITLE 1,Pandas Vectorised Function
+import pandas as pd
+from pyspark.sql.functions import pandas_udf
+
+# We have a integer input/output
+@pandas_udf("integer")
+def get_beer_cost_vudf(quantity_pint: pd.Series) -> pd.Series:
+    return quantity_pint * 4.0
+
+# COMMAND ----------
+
+# DBTITLE 1,Register for use in Python and SQL
+random_beer_reaction_udf = udf(random_beer_reaction)
+spark.udf.register("random_beer_reaction_udf", random_beer_reaction)
+spark.udf.register("random_beer_reaction_tudf", random_beer_reaction_tudf)
+spark.udf.register("get_beer_cost_vudf", get_beer_cost_vudf)
+
+# COMMAND ----------
+
+# DBTITLE 1,Functions in Python
+df_reaction = (
+    df_beers_drank.withColumn("beer_reaction_udf", random_beer_reaction_udf())
+    .withColumn("beer_reaction_tudf", random_beer_reaction_tudf(col("brewery_beer")))
+    .withColumn("beer_cost_vudf", get_beer_cost_vudf(col("quantity_pint")))
+    .select("brewery_beer", "beer_reaction_udf", "beer_reaction_tudf", "beer_cost_vudf")
+)
+display(df_reaction)
+
+# COMMAND ----------
+
+# DBTITLE 1,Registered Functions in SQL
+# MAGIC %sql
+# MAGIC -- You can now also apply the UDF from SQL
+# MAGIC SELECT
+# MAGIC   brewery_beer,
+# MAGIC   random_beer_reaction_udf() AS random_beer_reaction,
+# MAGIC   get_beer_cost_vudf(quantity_pint) as beer_cost
+# MAGIC FROM
+# MAGIC   beers_drank
 
 # COMMAND ----------
 
@@ -284,3 +390,18 @@ df_beers_drank_coalesce.rdd.getNumPartitions()
 # DBTITLE 1,Reduce or Increase Partitions Using Repartition Always with Shuffle
 df_beers_drank_repartition = df_beers_drank.repartition(8)
 df_beers_drank_repartition.rdd.getNumPartitions()
+
+# COMMAND ----------
+
+# MAGIC %md ## Caching
+
+# COMMAND ----------
+
+# DBTITLE 1,Cache DataFrame and Perform Action to Cache
+df_beers_drank.cache()
+df_beers_drank.count()
+
+# COMMAND ----------
+
+# DBTITLE 1,Remove from Cache
+df_beers_drank.unpersist()

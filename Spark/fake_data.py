@@ -37,8 +37,6 @@ brewery_beers = [
 # COMMAND ----------
 
 # DBTITLE 1,Fake Reference Table
-from pyspark.sql.functions import col
-
 df_brewer = spark.createDataFrame([("Tiny Rebel", "Newport"), ("Crafty Devil", "Cardiff"), ("Flowerhorn", "Cardiff")], ["brewer", "location"])
 
 brewer_metadata = {"description": "This is the name of the brewer of the beer."}
