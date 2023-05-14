@@ -85,6 +85,7 @@ from pyspark.sql.functions import (
     date_add,
     year,
     dayofweek,
+    array_contains
 )
 from datetime import datetime, timedelta
 
@@ -270,7 +271,7 @@ df_beers_collected = (
     df_beers_drank.groupBy("first_name")
     .agg(collect_set("brewery_beer").alias("unique_beers_drank"))
     .orderBy("first_name")
-)
+).filter(array_contains(col("unique_beers_drank"),"tinyrebel_staypuft"))
 display(df_beers_collected)
 
 # COMMAND ----------
@@ -309,19 +310,16 @@ display(df_dates)
 # DBTITLE 1,Create Simple Function
 import random
 
-
 def random_beer_reaction():
     reaction = ["bleh!", "tasty!", "woshiss??"]
     i = random.randint(0, 2)
     return reaction[i]
-
 
 random_beer_reaction()
 
 # COMMAND ----------
 
 # DBTITLE 1,Create Simple Function with Type Hints
-# Our input/output is a string
 @udf("string")
 def random_beer_reaction_tudf(beer: str) -> str:
     reaction = ["bleh!", "tasty!", "woshiss??"]
@@ -362,7 +360,6 @@ display(df_reaction)
 
 # DBTITLE 1,Registered Functions in SQL
 # MAGIC %sql
-# MAGIC -- You can now also apply the UDF from SQL
 # MAGIC SELECT
 # MAGIC   brewery_beer,
 # MAGIC   random_beer_reaction_udf() AS random_beer_reaction,
