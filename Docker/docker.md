@@ -21,22 +21,26 @@ docker info ## system wide info
 
 ```bash
 docker build -t myimagename . ## build an image from a dockerfile
+docker build -t myimagename . --no-cache ## force rebuild an image from a dockerfile
 docker images ## list local images
 docker rmi myimagename ## remove image
 docker image prune ## remove unused docker images
+docker run --rm -it -p 5000:5000/tcp myimagename:latest ## run image interactive
 ```
 
 ## Containers
 
 ```bash
-docker run -d --name mycontainername -p 80:80 myimagename ## run image on a container with specific port
+docker  ## run image on a container with specific port
 docker start mycontainername ## start container
 docker stop mycontainername ## stop container
+docker rm mycontainername ## remove container
 docker ps ## list running containers
 docker ps --all ## list running and stopped containers
 docker logs -f mycontainername ## get logs  and watch of container
 docker inspect mycontainername ## inspect running container
 docker container stats ## view resource stats
+docker exec -it mycontainername /bin/bash ## open up container and interact with it through bash to see directories etc e.g. ls, cd.., ls etc. Type exit to exit.
 ```
 
 ## Docker Hub
