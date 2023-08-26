@@ -15,6 +15,8 @@ Primarily taken from [here](https://docs.docker.com/get-started/docker_cheatshee
 - [Docker Hub](https://hub.docker.com/)
 - [Play with Docker](https://labs.play-with-docker.com/)
 - [Play with Kubernetes](https://labs.play-with-k8s.com/)
+- [DockerCon](https://www.dockercon.com/)
+- [kubeCon](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
 
 ## General
 
