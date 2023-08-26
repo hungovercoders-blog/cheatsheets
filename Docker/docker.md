@@ -6,6 +6,7 @@
   - [Images](#images)
   - [Containers](#containers)
   - [Docker Hub](#docker-hub)
+  - [Docker Compose](#docker-compose)
   - [Save Space Locally](#save-space-locally)
 
 Primarily taken from [here](https://docs.docker.com/get-started/docker_cheatsheet.pdf) on the docker site but added more as necessary.
@@ -13,6 +14,8 @@ Primarily taken from [here](https://docs.docker.com/get-started/docker_cheatshee
 ## Useful Links
 
 - [Docker Hub](https://hub.docker.com/)
+- [Docker Desktop](https://docs.docker.com/get-docker/)
+- [Docker VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 - [Play with Docker](https://labs.play-with-docker.com/)
 - [Play with Kubernetes](https://labs.play-with-k8s.com/)
 - [DockerCon](https://www.dockercon.com/)
@@ -40,7 +43,7 @@ docker run --rm -it -p 5000:5000/tcp myimagename:latest ## run image interactive
 ## Containers
 
 ```bash
-docker  ## run image on a container with specific port
+docker run -d -p 80:80 docker/getting-started  ## run getting started image on a container with specific port
 docker start mycontainername ## start container
 docker stop mycontainername ## stop container
 docker rm mycontainername ## remove container
@@ -60,6 +63,12 @@ docker tag myimagename {dockername}/name ## tag image on docker
 docker push {dockername}/myimagename ## push to docker hub
 docker search myimagename ## search on docker hub
 docker pull myimagename ## pull image from docker hub
+```
+
+## Docker Compose
+
+```bash
+
 ```
 
 ## Save Space Locally
