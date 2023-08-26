@@ -6,6 +6,7 @@
   - [Images](#images)
   - [Containers](#containers)
   - [Docker Hub](#docker-hub)
+  - [Volumes](#volumes)
   - [Docker Compose](#docker-compose)
   - [Docker File](#docker-file)
   - [Save Space Locally](#save-space-locally)
@@ -42,19 +43,20 @@ docker images ## list local images
 docker rmi myimagename ## remove image
 docker rmi imageid ## remove image
 docker image prune ## remove unused docker images
-docker run --rm -it -p 5000:5000/tcp myimagename:latest ## run image interactive
 ```
 
 ## Containers
 
 ```bash
-docker run -d -p 80:80 docker/getting-started  ## run getting started image on a container with specific port
+docker run --help ## get help
+docker run -d -p 80:80 docker/getting-started  ## run getting started image on a container with specific port. The d switch means is not blocking so allows you to run more commands.
+docker run --rm -it -p ext_port:int_port/tcp myimagename:latest ## run image interactive. The external port will be what expose outside (e.g. localhost), the internal port is what the app runs on inside
 docker start mycontainername ## start container
 docker stop mycontainername ## stop container
 docker rm mycontainername ## remove container
 docker ps ## list running containers
 docker ps --all ## list running and stopped containers
-docker logs -f mycontainername ## get logs  and watch of container
+docker logs -f mycontainerid ## get logs and watch container, very useful
 docker inspect mycontainername ## inspect running container
 docker container stats ## view resource stats
 docker exec -it mycontainername /bin/bash ## open up container and interact with it through bash to see directories etc e.g. ls, cd.., ls etc. Type exit to exit.
@@ -69,6 +71,14 @@ docker push {dockerregistry}/myimagename:tag ## push to docker hub with tag of v
 docker tag {dockerregistry}/myimagename:oldtag {dockerregistry}/myimagename:newtag ## tag image on docker
 docker search myimagename ## search on docker hub
 docker pull {dockerregistry}/myimagename:tag ## pull image from docker hub
+```
+
+## Volumes
+
+```bash
+docker run -p ext_port:int_port/tcp -v /place/data myimagename:latest # add volume command to write data somewhere for state
+docker run -p ext_port:int_port/tcp -v ${PWD}/myfolder:/place/data myimagename:latest # windows print working directory, use the current directory instead of "place/data" 
+docker run -p ext_port:int_port/tcp -v $(PWD)/myfolder:/place/data myimagename:latest # mac/linux print working directory, use the current directory instead of "place/data"
 ```
 
 ## Docker Compose
