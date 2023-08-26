@@ -7,6 +7,7 @@
   - [Containers](#containers)
   - [Docker Hub](#docker-hub)
   - [Docker Compose](#docker-compose)
+  - [Docker File](#docker-file)
   - [Save Space Locally](#save-space-locally)
 
 Primarily taken from [here](https://docs.docker.com/get-started/docker_cheatsheet.pdf) on the docker site but added more as necessary.
@@ -14,6 +15,7 @@ Primarily taken from [here](https://docs.docker.com/get-started/docker_cheatshee
 ## Useful Links
 
 - [Docker Hub](https://hub.docker.com/)
+- [Official Docker Images Available](https://hub.docker.com/search?image_filter=official&q=)
 - [Docker Desktop](https://docs.docker.com/get-docker/)
 - [Docker VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 - [Play with Docker](https://labs.play-with-docker.com/)
@@ -25,17 +27,20 @@ Primarily taken from [here](https://docs.docker.com/get-started/docker_cheatshee
 
 ```bash
 docker -d ## started docker daemon
-docker --help ## get helop
+docker --help ## get help
 docker info ## system wide info
 ```
 
 ## Images
 
 ```bash
-docker build -t myimagename . ## build an image from a dockerfile
-docker build -t myimagename . --no-cache ## force rebuild an image from a dockerfile
+docker build --help ## get help
+docker build -t myimagename:tag . ## build an image from a dockerfile, the "t" stands for tag
+docker build -t myimagename:tag -f mycustom.dockerfile . ## build an image from a custom named docker file
+docker build -t myimagename:tag . --no-cache ## force rebuild an image from a dockerfile
 docker images ## list local images
 docker rmi myimagename ## remove image
+docker rmi imageid ## remove image
 docker image prune ## remove unused docker images
 docker run --rm -it -p 5000:5000/tcp myimagename:latest ## run image interactive
 ```
@@ -59,16 +64,51 @@ docker exec -it mycontainername /bin/bash ## open up container and interact with
 
 ```bash
 docker login -u {dockername} ## login to docker hub
-docker tag myimagename {dockername}/name ## tag image on docker
-docker push {dockername}/myimagename ## push to docker hub
+docker build -t {dockerregistry}/myimagename:tag . ## build image and you can use tag to add version
+docker push {dockerregistry}/myimagename:tag ## push to docker hub with tag of version
+docker tag {dockerregistry}/myimagename:oldtag {dockerregistry}/myimagename:newtag ## tag image on docker
 docker search myimagename ## search on docker hub
-docker pull myimagename ## pull image from docker hub
+docker pull {dockerregistry}/myimagename:tag ## pull image from docker hub
 ```
 
 ## Docker Compose
 
 ```bash
 
+```
+
+## Docker File
+
+- [Reference Builder](https://docs.docker.com/engine/reference/builder/)
+- [My Docker Files](/docker/docker_files/)
+
+```dockerfile
+## State language and version
+FROM        language:version:specific 
+
+## Author
+LABEL       author="Hungovercoder"   
+
+## Set environment variables you can change
+ENV         ENV=prd                   
+## Set port which is reference in expose with dollar
+ENV         PORT=3000                 
+
+## Name of working directory
+WORKDIR     /app/location             
+## Copy specific files from a location to the working directory
+COPY        file1 file2 ./           
+
+## This could be install packages or libraries which is not dependent on your source code
+RUN         do something
+## Copy from a location to the working directory  
+## remember to use .dockerignore file to remove files not needed      
+COPY        from/. ./                 
+## The port you will expose the app on referencing environment variable
+EXPOSE      $PORT   
+
+## How you want program to start
+ENTRYPOINT  ["program", "start"]      
 ```
 
 ## Save Space Locally
