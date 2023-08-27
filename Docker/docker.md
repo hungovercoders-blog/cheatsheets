@@ -94,8 +94,16 @@ docker compose --help
 docker compose build
 docker compose build -f file_name
 docker compose up
+docker compose up -d ## detached mode so get your cmd tool back
+docker compose up -d --no-deps container_name ## only restarts the one you specify
 docker compose down
 docker compose logs
+docker compose push
+docker compose push service1 service2
+docker compose ps # list
+docker compose rm service # remove
+docker compose start service
+docker compose stop service
 ```
 
 ## Docker File
@@ -164,7 +172,9 @@ services:
     environment:
       - ENV=production
       - APP_VERSION=1.0
-      ## you can use environment file too
+      ## you can use environment file too e.g.
+      ## env_file:
+        ##  .settings.env
     depends_on: 
       - container_name02
       
