@@ -32,6 +32,7 @@ Primarily taken from [here](https://docs.docker.com/get-started/docker_cheatshee
 docker -d ## started docker daemon
 docker --help ## get help
 docker info ## system wide info
+docker version
 ```
 
 ## Images
@@ -94,16 +95,22 @@ docker compose --help
 docker compose build
 docker compose build -f file_name
 docker compose up
-docker compose up -d ## detached mode so get your cmd tool back
+docker compose up -d                          ## detached mode so get your cmd tool back
 docker compose up -d --no-deps container_name ## only restarts the one you specify
 docker compose down
 docker compose logs
+docker compose logs -t                      # logs with timestamps
+docker compose logs service1 service2       # specific container logs
+docker compose logs --tail=5                # last 5 lines
+docker compose logs -f                      # live error tracking
 docker compose push
 docker compose push service1 service2
-docker compose ps # list
-docker compose rm service # remove
+docker compose ps                           # list
+docker compose rm service                   # remove
 docker compose start service
 docker compose stop service
+docker compose exec service shell_type      # open container files in cmd shell
+docker compose up -d --scale service_name=4 # creates 4 containers for that service, ports and names must be unique so you can't assign these up front when doing this
 ```
 
 ## Docker File
