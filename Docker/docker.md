@@ -9,7 +9,9 @@
   - [Volumes](#volumes)
   - [Docker Compose](#docker-compose)
   - [Docker File](#docker-file)
+  - [Docker Compose File](#docker-compose-file)
   - [Save Space Locally](#save-space-locally)
+  - [Network](#network)
 
 Primarily taken from [here](https://docs.docker.com/get-started/docker_cheatsheet.pdf) on the docker site but added more as necessary.
 
@@ -18,7 +20,7 @@ Primarily taken from [here](https://docs.docker.com/get-started/docker_cheatshee
 - [Docker Hub](https://hub.docker.com/)
 - [Official Docker Images Available](https://hub.docker.com/search?image_filter=official&q=)
 - [Docker Desktop](https://docs.docker.com/get-docker/)
-- [Docker VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+- [Docker VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) - You can do so much with this!!!!
 - [Play with Docker](https://labs.play-with-docker.com/)
 - [Play with Kubernetes](https://labs.play-with-k8s.com/)
 - [DockerCon](https://www.dockercon.com/)
@@ -36,11 +38,11 @@ docker info ## system wide info
 
 ```bash
 docker build --help ## get help
-docker build -t myimagename:tag . ## build an image from a dockerfile, the "t" stands for tag
-docker build -t myimagename:tag -f mycustom.dockerfile . ## build an image from a custom named docker file
-docker build -t myimagename:tag . --no-cache ## force rebuild an image from a dockerfile
+docker build -t image_name:tag . ## build an image from a dockerfile, the "t" stands for tag
+docker build -t image_name:tag -f mycustom.dockerfile . ## build an image from a custom named docker file
+docker build -t image_name:tag . --no-cache ## force rebuild an image from a dockerfile
 docker images ## list local images
-docker rmi myimagename ## remove image
+docker rmi image_name ## remove image
 docker rmi imageid ## remove image
 docker image prune ## remove unused docker images
 ```
@@ -49,42 +51,51 @@ docker image prune ## remove unused docker images
 
 ```bash
 docker run --help ## get help
-docker run -d -p 80:80 docker/getting-started  ## run getting started image on a container with specific port. The d switch means is not blocking so allows you to run more commands.
-docker run --rm -it -p ext_port:int_port/tcp myimagename:latest ## run image interactive. The external port will be what expose outside (e.g. localhost), the internal port is what the app runs on inside
-docker start mycontainername ## start container
-docker stop mycontainername ## stop container
-docker rm mycontainername ## remove container
+docker run -d -p ext_port:int_port --name container_name image_name ## run docker image with name
+docker run -d -p ext_port:int_port --name container_name --net=network_name image_name ## run docker image with name in a network ##
+docker run -d --net=learn01 --name mongodb mongo ##run mongo with no ports specified and will pull down if don't have locally, name important here for connection strings
+docker run -d -p 80:80 --name docker/getting-started docker/getting-started  ## run getting started image on a container with specific port. The d switch means is not blocking iso allows you to run more commands.
+docker run --rm -it -p ext_port:int_port/tcp image_name:latest ## run image interactive. The external port will be what expose outside (e.g. localhost), the internal port is what the app runs on inside
+docker start container_name ## start container
+docker stop container_name ## stop container
+docker rm container_name ## remove container
 docker ps ## list running containers
 docker ps --all ## list running and stopped containers
-docker logs -f mycontainerid ## get logs and watch container, very useful
-docker inspect mycontainername ## inspect running container
+docker logs -f container_id ## get logs and watch container, very useful
+docker inspect container_name ## inspect running container
 docker container stats ## view resource stats
-docker exec -it mycontainername /bin/bash ## open up container and interact with it through bash to see directories etc e.g. ls, cd.., ls etc. Type exit to exit.
+docker exec -it container_name sh ## open up container and interact with it through bash (Interactive Terminal) to see directories etc e.g. ls, cd.., ls etc. Type exit to exit.
+docker container prune ## remove all stopped containers
 ```
 
 ## Docker Hub
 
 ```bash
 docker login -u {dockername} ## login to docker hub
-docker build -t {dockerregistry}/myimagename:tag . ## build image and you can use tag to add version
-docker push {dockerregistry}/myimagename:tag ## push to docker hub with tag of version
-docker tag {dockerregistry}/myimagename:oldtag {dockerregistry}/myimagename:newtag ## tag image on docker
-docker search myimagename ## search on docker hub
-docker pull {dockerregistry}/myimagename:tag ## pull image from docker hub
+docker build -t {dockerregistry}/image_name:tag . ## build image and you can use tag to add version
+docker push {dockerregistry}/image_name:tag ## push to docker hub with tag of version
+docker tag {dockerregistry}/image_name:oldtag {dockerregistry}/image_name:newtag ## tag image on docker
+docker search image_name ## search on docker hub
+docker pull {dockerregistry}/image_name:tag ## pull image from docker hub
 ```
 
 ## Volumes
 
 ```bash
-docker run -p ext_port:int_port/tcp -v /place/data myimagename:latest # add volume command to write data somewhere for state
-docker run -p ext_port:int_port/tcp -v ${PWD}/myfolder:/place/data myimagename:latest # windows print working directory, use the current directory instead of "place/data" 
-docker run -p ext_port:int_port/tcp -v $(PWD)/myfolder:/place/data myimagename:latest # mac/linux print working directory, use the current directory instead of "place/data"
+docker run -p ext_port:int_port/tcp -v /place/data image_name:latest # add volume command to write data somewhere for state
+docker run -p ext_port:int_port/tcp -v "${PWD}/myfolder:/place/data" image_name:latest # windows print working directory, use the current directory instead of "place/data" - make sure in the current directory when running!
+docker run -p ext_port:int_port/tcp -v "$(PWD)/myfolder:/place/data" image_name:latest # mac/linux print working directory, use the current directory instead of "place/data" - make sure in the current directory when running!
 ```
 
 ## Docker Compose
 
 ```bash
-
+docker compose --help
+docker compose build
+docker compose build -f file_name
+docker compose up
+docker compose down
+docker compose logs
 ```
 
 ## Docker File
@@ -121,6 +132,46 @@ EXPOSE      $PORT
 ENTRYPOINT  ["program", "start"]      
 ```
 
+## Docker Compose File
+
+- [My Docker Compose Files](/docker/docker_compose_files/)
+
+```yaml
+version: '0.0'
+
+services:
+
+  app:
+    container_name: container_name01
+    image: imagename01
+    build:
+      context: .
+      dockerfile: nameof.dockerfile
+      args:
+        PACKAGES: "arg1 arg2 arg3"
+    ports:
+      - "int_port:ext_port"
+    networks:
+      - network-01
+    volumes:
+      - ./volume/location
+    environment:
+      - ENV=production
+      - APP_VERSION=1.0
+    depends_on: 
+      - container_name02
+      
+  data:
+    container_name: container_name02
+    image: imagename02
+    networks:
+      - network-01
+
+networks:
+  network-01:
+    driver: bridge      
+```
+
 ## Save Space Locally
 
 ```bash
@@ -138,4 +189,14 @@ attach vdisk readonly
 compact vdisk
 detach vdisk
 exit
+```
+
+## Network
+
+```bash
+docker network create --driver bridge network_name
+docker network ls
+docker network inspect network_name
+docker network rm network_name
+docker network prune ## remove all unlinked networks
 ```
