@@ -110,8 +110,12 @@ FROM        language:version:specific
 ## Author
 LABEL       author="Hungovercoder"   
 
+## Pass in arguments
+ARG        environment
+
 ## Set environment variables you can change
-ENV         ENV=prd                   
+## In this case taking value from ARG above
+ENV         ENV=$environment                   
 ## Set port which is reference in expose with dollar
 ENV         PORT=3000                 
 
@@ -122,6 +126,8 @@ COPY        file1 file2 ./
 
 ## This could be install packages or libraries which is not dependent on your source code
 RUN         do something
+## You might want to echo vars back to confirm them
+RUN         echo "Environment is $ENV"
 ## Copy from a location to the working directory  
 ## remember to use .dockerignore file to remove files not needed      
 COPY        from/. ./                 
@@ -137,7 +143,7 @@ ENTRYPOINT  ["program", "start"]
 - [My Docker Compose Files](/docker/docker_compose_files/)
 
 ```yaml
-version: '0.0'
+version: '3.x'
 
 services:
 
@@ -145,7 +151,7 @@ services:
     container_name: container_name01
     image: imagename01
     build:
-      context: .
+      context: ./
       dockerfile: nameof.dockerfile
       args:
         PACKAGES: "arg1 arg2 arg3"
@@ -158,6 +164,7 @@ services:
     environment:
       - ENV=production
       - APP_VERSION=1.0
+      ## you can use environment file too
     depends_on: 
       - container_name02
       
