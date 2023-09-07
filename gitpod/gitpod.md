@@ -11,6 +11,8 @@
 - [gitpod samples](https://github.com/gitpod-samples)
 - [gitpod github](https://github.com/gitpod-io)
 - [gitpod status](https://www.gitpodstatus.com/)
+- [gitpodify](https://www.gitpod.io/guides/gitpodify)
+- [Gitpod workspace](https://www.gitpod.io/docs/configure/workspaces/workspace-image) uses [workspace-full](https://hub.docker.com/r/gitpod/workspace-full) docker image.
 
 ## Commands
 
@@ -57,6 +59,18 @@ tasks:
       TIMESTAMP=$(date +%Y%m%d_%H%M%S)
       echo "Timestamp: $TIMESTAMP"
       sleep 1
+  - name: Installed Python Version
+    command: python --version
+  - name: Installed Docker Version
+    command: docker version
+  - name: Installed Ruby Version
+    command: ruby -v
+  - name: Installed Java Version
+    command: java -version
+  - name: Installed Node Version
+    command: node -v
+  - name: Installed Go Version
+    command: go version
 
 ports:
   - port: 8000
@@ -65,5 +79,6 @@ ports:
 vscode:
   extensions:
     - dracula-theme.theme-dracula
+
 
 ```
