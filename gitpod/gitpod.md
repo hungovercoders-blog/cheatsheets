@@ -27,5 +27,43 @@ gp validate
 
 
 ```yaml
+# List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
+
+# Before and init runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
+
+tasks:
+  - name: Start web server
+    init: python -m http.server 8000
+  - name: Before Task 
+    before: echo 'before script'  ## Use this for tasks that need to run before init and before command. For example, customize the terminal or install global project dependencies.
+  - name: Init Task
+    init: echo 'init script' # Use this for heavy-lifting tasks such as downloading dependencies or compiling source code.
+  - name: Commmand Task
+    command: echo 'command script' # Use this to start your database or development server.
+  - name: Multiline Commmand Task
+    command: |
+      echo 'multiline command script 1' 
+      echo 'multiline command script 2' 
+  - name: Await Task
+    command: |
+      gp sync-await tasktowaiton
+      echo 'awaited for another task'
+      TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+      echo "Timestamp: $TIMESTAMP"
+  - name: Awaited Task
+    command: |
+      gp sync-done tasktowaiton
+      echo 'awaited for this task'
+      TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+      echo "Timestamp: $TIMESTAMP"
+      sleep 1
+
+ports:
+  - port: 8000
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - dracula-theme.theme-dracula
 
 ```
