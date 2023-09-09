@@ -2,7 +2,7 @@ ports:
   - port: 4000
     onOpen: open-browser
 tasks:
-  - before: RUN bash -lc "gem install jekyll bundler"
+  - before: -lc "gem install jekyll bundler"
     init: bundle update && bundle install
     command: bundle exec jekyll serve --host=0.0.0.0
     
