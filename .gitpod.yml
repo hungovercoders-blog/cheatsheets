@@ -1,3 +1,4 @@
 tasks:
-  - init: bundle install
-  - command: bundle exec jekyll serve
+  - name: Install and Run Jekyll
+    init: bundle install
+    command: bundle exec jekyll serve

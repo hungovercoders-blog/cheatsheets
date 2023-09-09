@@ -1,3 +1,7 @@
+---
+key: value
+---
+
 # Hungovercoder Cheat Sheets
 
 ## External Cheatsheets and Checklists
