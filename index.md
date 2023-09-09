@@ -2,17 +2,23 @@
 key: value
 ---
 
-<a href="https://blog.hungovercoders.com"><img alt="hungovercoders" src="/assets/logo3.ico"
-width=50px align="left"></a>
+<header class="site-header">
+  <a href="https://blog.hungovercoders.com"><img alt="hungovercoders" src="assets/logo3.ico"
+    width=50px align="left"></a>
+</header>
 
-# Hungovercoder Cheat Sheets
+# Hungovercoders
 
-* [gitpod](./gitpod/gitpod.md)
+- [docker](./Docker/docker.md)
+- [dotnet](./dotnet/dotnet.md)
+- [git](./Git/git.md)
+- [gitpod](./gitpod/gitpod.md)
+- [linux](./linux/linux.md)
+- [linux](./yaml/yaml.md)
+
 
 ## External Cheatsheets and Checklists
 
 - [Loads of Cheatsheets](https://github.com/rstacruz/cheatsheets)
 - [Front End Checklist](https://github.com/thedaviddias/Front-End-Checklist)
 - [The Ultimate Cheat Sheet for Critical Thinking](https://globaldigitalcitizen.org/ultimate-critical-thinking-cheat-sheet)
-
-test
