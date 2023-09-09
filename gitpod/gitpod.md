@@ -40,16 +40,24 @@ gp preview $(gp url 8000)/index.html # Open the workspace in a new browser tab f
 tasks:
   - name: Start web server
     init: python -m http.server 8000
-  - name: Before Task 
+  - name: All Tasks
     before: echo 'before script'  ## Use this for tasks that need to run before init and before command. For example, customize the terminal or install global project dependencies.
-  - name: Init Task
     init: echo 'init script' # Use this for heavy-lifting tasks such as downloading dependencies or compiling source code.
-  - name: Commmand Task
-    command: echo 'command script' # Use this to start your database or development server.
+    command: echo 'command script' # Use this to start your database or development server
+  - name: Env Task
+    env:
+      MYVAR: "Hello World"
+    command: echo $MYVAR 
+  - name: Account Env Task
+    command: echo $UNIQUE_NAMESPACE 
   - name: Multiline Commmand Task
     command: |
       echo 'multiline command script 1' 
       echo 'multiline command script 2' 
+  - name: Gitpod Default Env Variables
+    command: |
+      env | grep GITPOD_
+      echo $GITPOD_WORKSPACE_URL
   - name: Await Task
     command: |
       gp sync-await tasktowaiton
@@ -63,18 +71,20 @@ tasks:
       TIMESTAMP=$(date +%Y%m%d_%H%M%S)
       echo "Timestamp: $TIMESTAMP"
       sleep 1
-  - name: Installed Python Version
-    command: python --version
   - name: Installed Docker Version
     command: docker version
   - name: Installed Ruby Version
     command: ruby -v
   - name: Installed Java Version
     command: java -version
-  - name: Installed Node Version
-    command: node -v
   - name: Installed Go Version
     command: go version
+  - name: Installed Python Version
+    command: python --version
+    openMode: split-left
+  - name: Installed Node Version
+    command: node -v
+    openMode: split-left
 
 ports:
   - port: 8000
@@ -83,7 +93,6 @@ ports:
 vscode:
   extensions:
     - dracula-theme.theme-dracula
-
 
 ```
 
