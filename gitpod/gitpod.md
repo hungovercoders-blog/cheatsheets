@@ -2,6 +2,7 @@
 
 - [Gitpod](#gitpod)
   - [Useful Links](#useful-links)
+  - [Helpful](#helpful)
   - [Commands](#commands)
   - [Yaml File](#yaml-file)
 
@@ -13,14 +14,27 @@
 - [gitpod status](https://www.gitpodstatus.com/)
 - [gitpodify](https://www.gitpod.io/guides/gitpodify)
 - [Gitpod workspace](https://www.gitpod.io/docs/configure/workspaces/workspace-image) uses [workspace-full](https://hub.docker.com/r/gitpod/workspace-full) docker image.
+- [Open Visual Studio Code Extension Registry](https://open-vsx.org/)
+- [Personalize Environments](https://www.gitpod.io/blog/personalize-your-gitpod-workspace-environment)
+- [Dotfiles](https://github.com/gitpod-samples/demo-dotfiles-with-gitpod)
+- [Sharing Workspaces](https://www.gitpod.io/docs/configure/workspaces/collaboration)
+- [Gitpod Twitter](https://twitter.com/gitpod)
+- [Gitpod Community](https://discord.com/channels/816244985187008514/816249489911185418)
+
+## Helpful
+
+* Type @builtin in extensions to see all builtin extensions
 
 ## Commands
 
 - [CLI](https://www.gitpod.io/docs/references/gitpod-cli)
 
 ```bash
-gp init
-gp validate
+gp init # Initialize a new .gitpod.yml file
+gp validate # Validate the .gitpod.yml file
+gp help # Get help on the CLI
+gp url # Get the URL of the running workspace
+gp preview $(gp url 8000)/index.html # Open the workspace in a new browser tab for path and port specified
 ```
 
 ## Yaml File
