@@ -14,7 +14,7 @@ key: value
 - [git](./Git/git.md)
 - [gitpod](./gitpod/gitpod.md)
 - [linux](./linux/linux.md)
-- [linux](./yaml/yaml.md)
+- [yaml](./yaml/yaml.md)
 
 
 ## External Cheatsheets and Checklists
