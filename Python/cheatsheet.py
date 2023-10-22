@@ -1,6 +1,11 @@
 class CheatSheet:
 
     def __init__(self, my_name):
+        """Creates a cheatsheet class that creates a numbers of properties and a list to act upon 
+
+        Args:
+            my_name (_type_): Your name
+        """
         self.my_name = my_name
         self.beer_list = ["tiny rebel","garabage","crafty deval","flowerhorn","mad dog"]
         self.reverse_beer_list = []
@@ -16,11 +21,21 @@ class CheatSheet:
         self.beer_tuple = ("tiny rebel","clwb tropicana")
         
     def hello_coder(self,coder_type='hungovercoder'):
+        """Prints a message saying hello to the coder
+
+        Args:
+            coder_type (str, optional): _description_. Defaults to 'hungovercoder'.
+
+        Returns:
+            string: A message saying hello
+        """
         message = f"Hello {self.my_name}, you are now a {coder_type}"
         print(message)
         return message
     
-    def process_beer_list(self):  
+    def process_beer_list(self):
+        """Applies various example list type commands against the beer list
+        """
         self.beer_list.append("pipes")
         self.beer_list.append("mistake")
         self.beer_list.remove("mistake")

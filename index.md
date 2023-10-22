@@ -16,6 +16,7 @@ key: value
 - [git](./Git/git.md)
 - [gitpod](./gitpod/gitpod.md)
 - [linux](./linux/linux.md)
+- [python](./python/python.md)
 - [terraform](./terraform/terraform.md)
 - [tools](./tools/tools.md)
 - [yaml](./yaml/yaml.md)
