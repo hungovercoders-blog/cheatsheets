@@ -13,18 +13,18 @@ key: value
 
 These variables are consistently used as environment variables as a developer and in all platforms.
 The values of the variables should be **lowercase**.
-The values should **not contain an spaces but use underscores where appropriate**.
+The values should contain **no spaces**.
 
 |  Name | Category  | Description | Examples |
 |---|---|---|---|
-| DOMAIN  | GENERAL  | The name of the domain that the resource belongs to. | [platform, whiskey_reviews, dog_walk_scheduling] |
-| ENVIRONMENT  | GENERAL  | The name of the environment that the resource exists.  | [development, user_acceptance_testing, production] |
-| ENVIRONMENT_SHORTCODE  | GENERAL  | The shortcode of the environment that the resource exists.  | [dev, uat, prd] |
-| ORGANISATION  | GENERAL  | The name of the organisation.  | [datagriff, hungovercoders, dogadopt, starwalks] |
-| UNIQUE_NAMESPACE  | GENERAL  | The unique four character namespace of the organisation. This is used in resources to make them more likely to be globally unique. | [dgrf, hngc, dgad, stwa] |
-| TEAM  | GENERAL  | The name of the team. | [whiskey, dogwalk, dogrescue] |
-| REGION  | GENERAL  | The region the resource belongs to.  | [northeurope, westeurope] |
-| REGION_SHORTCODE  | GENERAL  | The shortcode of the region the resource belongs to.  | |
+| DOMAIN  | GENERAL  | The name of the domain that the resource belongs to. | ['platform', 'whiskeyreviews', 'dogwalkscheduling'] |
+| ENVIRONMENT  | GENERAL  | The name of the environment that the resource exists.  | ['development', 'useracceptancetesting', 'production'] |
+| ENVIRONMENT_SHORTCODE  | GENERAL  | The shortcode of the environment that the resource exists.  | ['dev', 'uat', 'prd'] |
+| ORGANISATION  | GENERAL  | The name of the organisation.  | ['datagriff', 'hungovercoders', 'dogadopt', 'starwalks'] |
+| UNIQUE_NAMESPACE  | GENERAL  | The unique four character namespace of the organisation. This is used in resources to make them more likely to be globally unique. | ['dgrf', 'hngc', 'dgad', 'stwa'] |
+| TEAM  | GENERAL  | The name of the team. | ['whiskey', 'dogwalk', 'dogrescue'] |
+| REGION  | GENERAL  | The region the resource belongs to.  | ['northeurope', 'westeurope'] |
+| REGION_SHORTCODE  | GENERAL  | The shortcode of the region the resource belongs to.  | ['eun', 'euw'] |
 | ARM_TENANT_ID  | AZURE  | The tenant id of the Azure account  | |
 | ARM_SUBSCRIPTION_ID  | AZURE  | The id of the Azure subscription  | |
 | ARM_SUBSCRIPTION_NAME  | AZURE  | The name id of the Azure subscription  | |
@@ -36,8 +36,8 @@ The values should **not contain an spaces but use underscores where appropriate*
 
 Below are how resources should be implemented and tagged.
 
-|  Description | Category | Examples |
-|---|---|---|
-| Resource Tagging  | GENERAL  | environment={ENVIRONMENT_SHORTCODE};domain={DOMAIN};team={TEAM};organisation={ORGANISATION}; |
-| Azure resource groups  | AZURE  | {ENVIRONMENT_SHORTCODE}-{DOMAIN} |
-| Azure resources that allow hyphens  | AZURE     | {ENVIRONMENT_SHORTCODE}-{DOMAIN}-{REGION_SHORTCODE}-{UNIQUE_NAMESPACE} |
+|  Description | Category | Format | Example |
+|---|---|---|---|
+| Resource Tagging  | GENERAL  | environment={ENVIRONMENT_SHORTCODE};domain={DOMAIN};team={TEAM};organisation={ORGANISATION}; | ```tags = {environment  = var.environment organisation = var.organisation team         = var.team domain       = var.domain}``` |
+| Azure resource groups  | AZURE  | {ENVIRONMENT_SHORTCODE}-{DOMAIN} |dev-whiskeyreviews |
+| Azure resources that allow hyphens  | AZURE     | {ENVIRONMENT_SHORTCODE}-{DOMAIN}-{REGION_SHORTCODE}-{UNIQUE_NAMESPACE} | dev-whiskeyreviews-eun-hngc |
