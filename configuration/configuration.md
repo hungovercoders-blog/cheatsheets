@@ -40,4 +40,5 @@ Below are how resources should be implemented and tagged.
 |---|---|---|---|
 | Resource Tagging  | GENERAL  | environment={ENVIRONMENT_SHORTCODE};domain={DOMAIN};team={TEAM};organisation={ORGANISATION}; | ```tags = {environment  = var.environment organisation = var.organisation team         = var.team domain       = var.domain}``` |
 | Azure resource groups  | AZURE  | {ENVIRONMENT_SHORTCODE}-{DOMAIN} |dev-whiskeyreviews |
-| Azure resources that allow hyphens  | AZURE     | {ENVIRONMENT_SHORTCODE}-{DOMAIN}-{REGION_SHORTCODE}-{UNIQUE_NAMESPACE} | dev-whiskeyreviews-eun-hngc |
+| Resources that allow hyphens  | CLOUD | {ENVIRONMENT_SHORTCODE}-{DOMAIN}-{REGION_SHORTCODE}-{UNIQUE_NAMESPACE} | dev-whiskeyreviews-eun-hngc |
+| Resources that don't allow hyphens  | CLOUD | {ENVIRONMENT_SHORTCODE}-{DOMAIN}-{REGION_SHORTCODE}-{UNIQUE_NAMESPACE} | devwhiskeyreviewseunhngc |
