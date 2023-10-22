@@ -9,11 +9,15 @@ key: value
 
 # Hungovercoders
 
+- [api](./api/api.md)
+- [configuration](./configuration/configuration.md)
 - [docker](./Docker/docker.md)
 - [dotnet](./dotnet/dotnet.md)
 - [git](./Git/git.md)
 - [gitpod](./gitpod/gitpod.md)
 - [linux](./linux/linux.md)
+- [terraform](./terraform/terraform.md)
+- [tools](./tools/tools.md)
 - [yaml](./yaml/yaml.md)
 
 
