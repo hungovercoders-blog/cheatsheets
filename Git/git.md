@@ -23,6 +23,8 @@ git add . ## add all files in the directory to git repo
 git add "filename" ## add specific file to the git repo
 git status ## check the status of files in the git repo
 git commit -m "message" ## commit your working code to the git repo with a message
+git commit --amend --no-edit ## amend last commit without creating another one with for example small change
+git reset --hard HEAD^ ## go back to commit before last
 ```
 
 ## Remote
@@ -37,6 +39,7 @@ git pull ##pull any changes made in the remote repo to your local repo
 ## Branch and Commit Management
 
 ```bash
+git log --oneline ## see commits
 git branch branch-name ## create new branch
 git checkout branch-name ## checkout the branch
 git merge other-branch ## merge other-branch into current branch
