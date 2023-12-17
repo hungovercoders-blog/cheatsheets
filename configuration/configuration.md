@@ -9,6 +9,25 @@ key: value
 
 # Configuration
 
+- [Configuration](#configuration)
+  - [Variables](#variables)
+    - [Rules](#rules)
+    - [Values](#values)
+    - [Dynamic Values](#dynamic-values)
+  - [Conventions](#conventions)
+  - [Variables Implementation](#variables-implementation)
+    - [Local](#local)
+    - [Gitpod](#gitpod)
+    - [Github](#github)
+      - [Codespaces](#codespaces)
+      - [Actions](#actions)
+    - [Terraform](#terraform)
+  - [Events](#events)
+    - [Topic Naming](#topic-naming)
+      - [Rough Examples](#rough-examples)
+    - [Event format](#event-format)
+
+
 ## Variables
 
 ### Rules
@@ -78,3 +97,20 @@ Below are how resources should be implemented and tagged.
 | TF_VAR_unique_namespace | Azure | This is the name of the unique organisational namespace that the terraform resource will belong to and act as a postfix to resources | export TF_VAR_unique_namespace=$UNIQUE_NAMESPACE | ["hngc","dgrf","dgad"] |
 | TF_VAR_organisation | Azure | This is the name of the organisation that owns the terraform resource | export TF_VAR_organisation=$ORGANISATION | ["hungovercoders","datagriff","dogadopt"] |
 | TF_VAR_region | Azure | This is the name of the Azure region that the terraform resource will deploy to| export TF_VAR_region=$ARM_REGION | ["northeurope","westeurope"] |
+
+## Events
+
+### Topic Naming
+
+- Adopted {domain}.{eventtype}.{eventname}.{version} as adopted from [here](https://medium.com/inavitas/kafka-topic-naming-be16a51ef2c0).
+
+#### Rough Examples
+
+- booze.fct.whiskeyreviewed.v1
+- booze.cdc.pub.v1
+- dogrescue.fct.adoptionlead.v1
+- dogwalkscheduling.cdc.dogwalk.v1
+
+### Event format
+
+- [Cloud Events](https://cloudevents.io/)
