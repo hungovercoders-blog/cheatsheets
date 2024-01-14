@@ -9,6 +9,8 @@ key: value
 
 # Team Management
 
+## Categories of Concern
+
 * Communications
 * Integrations
 * Reliability
