@@ -11,6 +11,7 @@ key: value
 
 ## Categories of Concern
 
+* Precision - how well can I understand the following?
 * Communications
 * Integrations
 * Reliability
