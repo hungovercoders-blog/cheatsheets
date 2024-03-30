@@ -11,7 +11,7 @@ key: value
 
 - [api](./api/api.md)
 - [configuration](./configuration/configuration.md)
-- [docker](./devops/devops.md)
+- [devops](./devops/devops.md)
 - [docker](./Docker/docker.md)
 - [dotnet](./dotnet/dotnet.md)
 - [git](./Git/git.md)
