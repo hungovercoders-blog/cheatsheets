@@ -20,3 +20,7 @@ key: value
 * Team Management
 * Security
 * Personal
+
+## Careers
+
+* [Beyond Coding for your Career](https://gist.github.com/blueboxes/31f66638668cd932696e7c876cf6e75c)
