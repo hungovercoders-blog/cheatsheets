@@ -10,6 +10,7 @@ key: value
 # Hungovercoders
 
 - [api](./api/api.md)
+- [community](./community/community.md)
 - [configuration](./configuration/configuration.md)
 - [devops](./devops/devops.md)
 - [docker](./Docker/docker.md)
@@ -18,7 +19,7 @@ key: value
 - [gitpod](./gitpod/gitpod.md)
 - [linux](./linux/linux.md)
 - [python](./Python/python.md)
-- [python](./team_management/team_management.md)
+- [team_management](./team_management/team_management.md)
 - [terraform](./terraform/terraform.md)
 - [tools](./tools/tools.md)
 - [yaml](./yaml/yaml.md)
