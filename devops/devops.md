@@ -24,6 +24,14 @@ key: value
 
 - [DORA](https://dora.dev/)
 
+## Security
+
+* [Snyk](https://snyk.io/)
+
+## Dependencies
+
+* [Lib year](https://libyear.com/)
+
 ## Accelerate
 
 ### Measures
