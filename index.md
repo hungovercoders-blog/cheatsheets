@@ -10,6 +10,7 @@ key: value
 # Hungovercoders
 
 - [api](./api/api.md)
+- [architecture](./architecture/architecture.md)
 - [community](./community/community.md)
 - [configuration](./configuration/configuration.md)
 - [devops](./devops/devops.md)
