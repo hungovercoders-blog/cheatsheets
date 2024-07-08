@@ -10,3 +10,4 @@ key: value
 # Architecture
 
 * [Serverless Land - EDA etc](https://serverlessland.com/)
+* [ddd crew](https://github.com/ddd-crew)
