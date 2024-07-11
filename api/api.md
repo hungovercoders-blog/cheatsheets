@@ -32,6 +32,7 @@ key: value
 - [Design APIs Github](https://github.com/designapis)
 - [Open APIs Org](https://www.openapis.org/)
 - [Swagger IO](https://swagger.io/tools/open-source/)
+- [Fast AP]()
 
 ## Status Codes
 
