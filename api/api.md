@@ -35,6 +35,7 @@ key: value
 - [Fast API Videos](https://www.youtube.com/playlist?list=PLsvvBhdpMqBzWyrSOWg0PO67t2K7IaEhE)
 - [Swagger Hub](https://app.swaggerhub.com/apis/designing-apis/part-one/ch08-end#/Reviews/get_reviews)
 - [Marvel API](https://developer.marvel.com/)
+- [Top Ten Mock Tools](https://dev.to/ismailkamil/review-10-top-api-mock-tools-57f7)
 
 ## Status Codes
 
