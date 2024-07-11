@@ -33,6 +33,8 @@ key: value
 - [Open APIs Org](https://www.openapis.org/)
 - [Swagger IO](https://swagger.io/tools/open-source/)
 - [Fast API Videos](https://www.youtube.com/playlist?list=PLsvvBhdpMqBzWyrSOWg0PO67t2K7IaEhE)
+- [Swagger Hub](https://app.swaggerhub.com/apis/designing-apis/part-one/ch08-end#/Reviews/get_reviews)
+- [Marvel API](https://developer.marvel.com/)
 
 ## Status Codes
 
