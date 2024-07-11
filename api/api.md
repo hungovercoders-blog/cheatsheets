@@ -27,6 +27,11 @@ key: value
 ## Useful Links
 
 - [Restful API](https://restfulapi.net/)
+- [Postman](https://www.postman.com/)
+- [DesignAPIs](http://designapis.com/)
+- [Design APIs Github](https://github.com/designapis)
+- [Open APIs Org](https://www.openapis.org/)
+- [Swagger IO](https://swagger.io/tools/open-source/)
 
 ## Status Codes
 
