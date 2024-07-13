@@ -39,6 +39,8 @@ key: value
 
 ## Status Codes
 
+* [status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
 | Status Code | Reason Phrase         | Description                                                 |
 |-------------|-----------------------|-------------------------------------------------------------|
 | 200         | OK                    | The request was successfully received, understood, and accepted.|
