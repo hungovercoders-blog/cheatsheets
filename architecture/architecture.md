@@ -16,6 +16,7 @@ key: value
 ## Contracts
 
 * [Open API](https://www.openapis.org/)
+  * [Open API Generator](https://openapi-generator.tech/)
 * [Async API](https://www.asyncapi.com/en)
 * [Data Contract](https://datacontract.com/)
   * [Data Contract CLI](https://cli.datacontract.com/)
