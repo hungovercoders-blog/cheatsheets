@@ -12,6 +12,17 @@ key: value
 * [Serverless Land - EDA etc](https://serverlessland.com/)
 * [ddd crew](https://github.com/ddd-crew)
 * [c4 Diagrams](https://c4model.com/)
+* [domain modelling](https://www.thoughtworks.com/en-gb/insights/blog/agile-project-management/domain-modeling-what-you-need-to-know-before-coding)
+* [event storming](https://www.eventstorming.com/)
+
+## Software Design Order
+
+* Requirements
+* Domain Model
+* Stories
+* Contracts
+* Event storming for distributed systems
+* C4 diagram
 
 ## Contracts
 
