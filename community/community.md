@@ -9,6 +9,10 @@ key: value
 
 # Community
 
+## Vs code
+
+[Vscode recording](https://dev.to/sinedied/3-tips-for-perfect-vs-code-video-gifs-recordings-dbn)
+
 ## Personal
 
 * [Link Tree](https://linktr.ee/)
