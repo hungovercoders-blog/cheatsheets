@@ -10,6 +10,7 @@ key: value
 # Git Cheat Sheet
 
 - [Git Cheat Sheet](#git-cheat-sheet)
+  - [VS Code Quick Workflow](#vs-code-quick-workflow)
   - [Local](#local)
   - [Remote](#remote)
   - [Branch and Commit Management](#branch-and-commit-management)
@@ -17,6 +18,16 @@ key: value
   - [Conventional Commits](#conventional-commits)
     - [Format](#format)
     - [Types](#types)
+
+## VS Code Quick Workflow
+
+Following ensures use of conventional commits and automatic syncing on commit!
+
+- Use [Conventional Commits VS Code extension](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits).
+- As per extension docs
+  1. Enable Settings > conventionalCommits.autoCommit configuration of the extension. The extension enables Settings > conventionalCommits.autoCommit by default.
+  1. Enable Settings > git.enableSmartCommit and set Settings > git.smartCommitChanges to all to commit all changes when there are no staged changes.
+  1. Set Settings > git.postCommitCommand to sync to run git.sync after commit.
 
 ## Local
 
@@ -72,6 +83,7 @@ git config --global user.email "info@hungovercoders.com"
 git config --global http.proxy
 http://proxyUsername:proxyPassword@proxy.server.com:port
 ```
+
 ## Conventional Commits
 
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
