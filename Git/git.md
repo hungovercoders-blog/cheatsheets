@@ -14,6 +14,9 @@ key: value
   - [Remote](#remote)
   - [Branch and Commit Management](#branch-and-commit-management)
   - [Setup local git config](#setup-local-git-config)
+  - [Conventional Commits](#conventional-commits)
+    - [Format](#format)
+    - [Types](#types)
 
 ## Local
 
@@ -77,3 +80,42 @@ http://proxyUsername:proxyPassword@proxy.server.com:port
   - [Conventional Commits Githooks](https://github.com/tapsellorg/conventional-commits-git-hook?tab=readme-ov-file)
   - [VS Code Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
   - [Jetbrains Conventional Commits](https://plugins.jetbrains.com/plugin/13389-conventional-commit)
+
+### Format
+
+```yaml
+<type=feat|fix|perf|build|ci|chore|docs|refactor|revert|style|test>[(optional scope)]: <description, imperative, present tense, lowercase, no dot at end>
+
+[
+  Optional body section.
+
+  Motivation for the change and contrast with previous behaviour.
+
+  Can span multiple lines.
+]
+
+[BREAKING CHANGE: :warning: <description, imperative, present tense, lowercase, no dot at end>]
+
+[Closes / Fixes #123, #456, #789]
+
+[
+  - Additional links and meta-information
+  - Additional links and meta-information
+  - Additional links and meta-information
+]
+```
+
+### Types
+
+|Type|Meaning|Description|
+|--|--|--|
+|feat|Features|A new feature|
+|fix|Bug fixes|A bug fix|
+|docs|Documentation|Documentation only changes|
+|style|Styles|Changes that do not affect the meaning of the code|
+|refactor|Code Refactoring|Code change neither fixes a bug nor adds a feature|
+|perf|Performance Improvements|Code change that improves performance|
+|test|Tests|Adding missing tests or correct existing tests|
+|build| Builds| Changes that affect build or deployment pipelines|
+|chore|Chores|Other changes that don't modify src or test files|
+|revert|Reverts|Reverts a previous commit|
