@@ -27,3 +27,5 @@ key: value
 * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 * [Dracula Theme](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
 * [Databricks](https://marketplace.visualstudio.com/items?itemName=databricks.databricks)
+* [Terraform](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform)
+* [Azure Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack)
