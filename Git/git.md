@@ -15,9 +15,13 @@ key: value
   - [Remote](#remote)
   - [Branch and Commit Management](#branch-and-commit-management)
   - [Setup local git config](#setup-local-git-config)
+<<<<<<< HEAD
+  - [Conventional Commits](#conventional-commits)
+=======
   - [Conventional Commits](#conventional-commits)
     - [Format](#format)
     - [Types](#types)
+>>>>>>> ae0f132258919f173723a745f6daa03512d07b0c
 
 ## VS Code Quick Workflow
 
@@ -96,6 +100,10 @@ http://proxyUsername:proxyPassword@proxy.server.com:port
   - [VS Code Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
   - [Jetbrains Conventional Commits](https://plugins.jetbrains.com/plugin/13389-conventional-commit)
 
+<<<<<<< HEAD
+  ### Types
+
+=======
 ### Format
 
 ```yaml
@@ -134,3 +142,4 @@ http://proxyUsername:proxyPassword@proxy.server.com:port
 |build| Builds| Changes that affect build or deployment pipelines|
 |chore|Chores|Other changes that don't modify src or test files|
 |revert|Reverts|Reverts a previous commit|
+>>>>>>> ae0f132258919f173723a745f6daa03512d07b0c
