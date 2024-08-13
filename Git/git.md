@@ -69,3 +69,11 @@ git config --global user.email "info@hungovercoders.com"
 git config --global http.proxy
 http://proxyUsername:proxyPassword@proxy.server.com:port
 ```
+## Conventional Commits
+
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+  - [ConventionalCommits Cheat Sheet 1](https://github.com/qoomon/git-conventional-commits)
+  - [ConventionalCommits Cheat Sheet 2](https://megamorf.gitlab.io/cheat-sheets/conventional-commits/)
+  - [Conventional Commits Githooks](https://github.com/tapsellorg/conventional-commits-git-hook?tab=readme-ov-file)
+  - [VS Code Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
+  - [Jetbrains Conventional Commits](https://plugins.jetbrains.com/plugin/13389-conventional-commit)
