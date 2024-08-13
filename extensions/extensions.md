@@ -93,3 +93,5 @@ key: value
 ### VS Code Links
 
 * [Best VS Code Extensions FreeCodeCamp](https://www.freecodecamp.org/news/best-vscode-extensions/)
+
+* [Pets](https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets)
