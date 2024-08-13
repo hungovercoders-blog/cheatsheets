@@ -11,7 +11,21 @@ key: value
 
 ## vs code
 
+### Python
+
+* [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack)
+  * []()
+* [Python Development Extensions Pack](https://marketplace.visualstudio.com/items?itemName=demystifying-javascript.python-extensions-pack)
+* [Another Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=LeoJhonSong.python-extension-pack)
+* [Python Live Code](https://marketplace.visualstudio.com/items?itemName=xirider.livecode)
+
 * [VS Code Essentials](https://marketplace.visualstudio.com/items?itemName=Gydunhn.vsc-essentials)
+
+* [Trunk Code Quality](https://marketplace.visualstudio.com/items?itemName=Trunk.io)
+  * [Trunk IO](https://trunk.io/)
+
+* [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+* [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock)
 
 * [Dracula Theme](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
 
@@ -23,7 +37,15 @@ key: value
 * [Markdown Enhanced Preview](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
 * [Markdown Lint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 
+* [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
+
+* [Tabnine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
+* [TODO](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
+* [TODO Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
+
 * [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
+* [Indent Rainbow Pallette](https://marketplace.visualstudio.com/items?itemName=evondev.indent-rainbow-palettes)
+* [Colorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize)
 
 * [Liveshare](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
 
@@ -32,7 +54,8 @@ key: value
 ![Multi Cursor Case Preserve](https://www.freecodecamp.org/news/content/images/2024/01/Example--1-.gif)
 
 * [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
-* [Prettier]()
+* [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+* [Prettier SQL Code](https://marketplace.visualstudio.com/items?itemName=inferrinizzard.prettier-sql-vscode)
 * [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 * [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)
 * [Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
