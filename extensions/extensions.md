@@ -13,6 +13,7 @@ key: value
 
 * [Markdown Preview](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
 * [Liverserver](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+* [Code Tours](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour)
 * [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 * [Git Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
 * [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
@@ -24,3 +25,5 @@ key: value
 * [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 * [Go](https://marketplace.visualstudio.com/items?itemName=golang.Go)
 * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+* [Dracula Theme](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
+* [Databricks](https://marketplace.visualstudio.com/items?itemName=databricks.databricks)
