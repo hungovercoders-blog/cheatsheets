@@ -18,7 +18,7 @@ key: value
   - [Conventional Commits](#conventional-commits)
     - [Format](#format)
     - [Types](#types)
-    - [VS Code Quick Workflow](vs-code-quick-workflow)
+    - [VS Code Quick Workflow](#vs-code-quick-workflow)
 
 ## Local
 
