@@ -23,6 +23,8 @@ key: value
 
 * [Trunk Code Quality](https://marketplace.visualstudio.com/items?itemName=Trunk.io)
   * [Trunk IO](https://trunk.io/)
+* [Githooks](https://marketplace.visualstudio.com/items?itemName=lakshmikanthayyadevara.githooks)
+  * [Githooks Vs Code](https://medium.com/womenintechnology/how-to-implement-git-hooks-with-vs-code-4e4fb185638f)
 
 * [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 * [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock)
@@ -32,6 +34,7 @@ key: value
 * [VS Code Icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
 * [Material Theme Icons](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme-icons)
 * [File Icons](https://marketplace.visualstudio.com/items?itemName=file-icons.file-icons)
+* [gitignore](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore)
 
 * [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 * [Markdown Enhanced Preview](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
@@ -65,6 +68,8 @@ key: value
 * [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
 * [Git Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
 * [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+* [Github Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+* [Github Actions](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)
 
 * [Liverserver](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 * [Code Tours](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour)
