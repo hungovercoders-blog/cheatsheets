@@ -23,6 +23,8 @@ key: value
 
 Following ensures use of conventional commits and automatic syncing on commit!
 
+- Ensure autosave is on in VS code.
+- Add keyword binding for conventional commits to be CTRl+S.
 - Use [Conventional Commits VS Code extension](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits).
 - As per extension docs
   1. Enable Settings > conventionalCommits.autoCommit configuration of the extension. The extension enables Settings > conventionalCommits.autoCommit by default.
