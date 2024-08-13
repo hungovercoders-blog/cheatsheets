@@ -18,19 +18,7 @@ key: value
   - [Conventional Commits](#conventional-commits)
     - [Format](#format)
     - [Types](#types)
-
-## VS Code Quick Workflow
-
-Following ensures use of conventional commits and automatic syncing on commit!
-
-- Use [Conventional Commits VS Code extension](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits).
-- As per extension docs
-  1. Enable Settings > conventionalCommits.autoCommit configuration of the extension. The extension enables Settings > conventionalCommits.autoCommit by default.
-  2. Enable Settings > git.enableSmartCommit and set Settings > git.smartCommitChanges to all to commit all changes when there are no staged changes.
-  3. Set Settings > git.postCommitCommand to sync to run git.sync after commit.
-- Ensure autosave is on in VS code.
-- Add keyword binding for conventional commits to be CTRl+S.
-  - This is nice as whenever I save now using my instinctive shortcut muscle memory I will also be prompted to commit with a good commit message and I will automatically sync my code too!
+    - [VS Code Quick Workflow](vs-code-quick-workflow)
 
 ## Local
 
@@ -134,4 +122,16 @@ http://proxyUsername:proxyPassword@proxy.server.com:port
 |build| Builds| Changes that affect build or deployment pipelines|
 |chore|Chores|Other changes that don't modify src or test files|
 |revert|Reverts|Reverts a previous commit|
->>>>>>> ae0f132258919f173723a745f6daa03512d07b0c
+
+### VS Code Quick Workflow
+
+Following ensures use of conventional commits and automatic syncing on commit!
+
+- Use [Conventional Commits VS Code extension](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits).
+- As per extension docs
+  1. Enable Settings > conventionalCommits.autoCommit configuration of the extension. The extension enables Settings > conventionalCommits.autoCommit by default.
+  2. Enable Settings > git.enableSmartCommit and set Settings > git.smartCommitChanges to all to commit all changes when there are no staged changes.
+  3. Set Settings > git.postCommitCommand to sync to run git.sync after commit.
+- Ensure autosave is on in VS code.
+- Add keyword binding for conventional commits to be CTRl+S.
+  - This is nice as whenever I save now using my instinctive shortcut muscle memory I will also be prompted to commit with a good commit message and I will automatically sync my code too!
