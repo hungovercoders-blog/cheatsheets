@@ -14,6 +14,7 @@ trunk init
 trunk check
 trunk fmt
 trunk check list
+trunk tools list
 trunk actions list
 trunk actions enable trunk-check-pre-commit
 trunk actions enable trunk-check-pre-push-always
