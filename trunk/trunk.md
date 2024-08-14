@@ -18,4 +18,5 @@ trunk tools list
 trunk actions list
 trunk actions enable trunk-check-pre-commit
 trunk actions enable trunk-check-pre-push-always
+trunk show-announcements since HEAD~1
 ```
