@@ -10,6 +10,7 @@ key: value
 # [Trunk](https://trunk.io/)
 
 ```bash
+trunk login
 trunk init
 trunk check
 trunk fmt
