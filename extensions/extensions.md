@@ -11,6 +11,8 @@ key: value
 
 ## vs code
 
+* [time track pack](https://marketplace.visualstudio.com/items?itemName=thegeoffstevens.time-tracking-pack)
+
 ### Python
 
 * [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack)
