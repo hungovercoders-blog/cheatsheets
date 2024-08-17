@@ -23,6 +23,7 @@ key: value
 ## Useful Links
 
 - [DORA](https://dora.dev/)
+- [trunk based development](https://trunkbaseddevelopment.com/#trunk-based-development-for-smaller-teams)
 
 ## Security
 
