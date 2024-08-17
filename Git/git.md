@@ -10,7 +10,6 @@ key: value
 # Git Cheat Sheet
 
 - [Git Cheat Sheet](#git-cheat-sheet)
-  - [VS Code Quick Workflow](#vs-code-quick-workflow)
   - [Local](#local)
   - [Remote](#remote)
   - [Branch and Commit Management](#branch-and-commit-management)
@@ -19,6 +18,10 @@ key: value
     - [Format](#format)
     - [Types](#types)
     - [VS Code Quick Workflow](#vs-code-quick-workflow)
+
+# Useful links
+
+* [minimum git](https://medium.com/@elischleifer/minimum-viable-git-for-trunk-based-development-81a5da7a77a7)
 
 ## Local
 
