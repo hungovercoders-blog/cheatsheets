@@ -64,6 +64,8 @@ key: value
 * [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 * [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)
 * [Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+* [grammar check](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex)
+
 * [CodeSnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap)
 * [CodeiumAI](https://marketplace.visualstudio.com/items?itemName=Codium.codium)
 
