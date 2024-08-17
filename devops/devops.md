@@ -24,6 +24,7 @@ key: value
 
 - [DORA](https://dora.dev/)
 - [trunk based development](https://trunkbaseddevelopment.com/#trunk-based-development-for-smaller-teams)
+  - [trunk styles](https://trunkbaseddevelopment.com/styles/)
 
 ## Security
 
