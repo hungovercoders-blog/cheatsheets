@@ -22,6 +22,7 @@ key: value
 # Useful links
 
 * [minimum git](https://medium.com/@elischleifer/minimum-viable-git-for-trunk-based-development-81a5da7a77a7)
+* [githooks trunk](https://medium.com/@elischleifer/githook-management-da321125ff4a)
 
 ## Local
 
