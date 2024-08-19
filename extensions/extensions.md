@@ -47,6 +47,7 @@ key: value
 * [Tabnine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
 * [TODO](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
 * [TODO Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
+* [Github Action TODO to Issue](https://github.com/marketplace/actions/todo-to-issue)
 
 * [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
 * [Indent Rainbow Pallette](https://marketplace.visualstudio.com/items?itemName=evondev.indent-rainbow-palettes)
