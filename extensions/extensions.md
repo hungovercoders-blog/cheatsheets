@@ -9,6 +9,9 @@ key: value
 
 # extensions
 
+* [vs code marketplace](https://marketplace.visualstudio.com/vscode)
+* [github marketplace](https://github.com/marketplace)
+
 ## vs code
 
 * [time track pack](https://marketplace.visualstudio.com/items?itemName=thegeoffstevens.time-tracking-pack)
