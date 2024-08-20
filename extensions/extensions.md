@@ -104,3 +104,4 @@ key: value
 
 * [Pets](https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets)
 * [power mode](https://marketplace.visualstudio.com/items?itemName=hoovercj.vscode-power-mode)
+* [QuackTrack](https://marketplace.visualstudio.com/items?itemName=2Guys1Account.quackrack-cursor)
