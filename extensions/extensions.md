@@ -97,7 +97,12 @@ key: value
 * [Databricks](https://marketplace.visualstudio.com/items?itemName=databricks.databricks)
 * [Terraform](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform)
 * [Azure Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack)
+* 
+### Complexity
 
+* [Codalyze](https://marketplace.visualstudio.com/items?itemName=selcuk-usta.code-complexity-report-generator)
+* [Code Metrics](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics)
+* 
 ### VS Code Links
 
 * [Best VS Code Extensions FreeCodeCamp](https://www.freecodecamp.org/news/best-vscode-extensions/)
