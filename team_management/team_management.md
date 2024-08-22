@@ -28,3 +28,7 @@ key: value
 ## Blogs
 
 * [Rands In Repose](https://randsinrepose.com/)
+
+## Prioritisation 
+
+[how to set priorities](https://newsletter.techworld-with-milan.com/p/how-to-set-priorities?ref=dailydev)
