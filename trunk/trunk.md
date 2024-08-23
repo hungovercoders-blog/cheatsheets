@@ -12,6 +12,7 @@ key: value
 ```bash
 trunk login
 trunk init
+trunk config share
 trunk check
 trunk fmt
 trunk check list
