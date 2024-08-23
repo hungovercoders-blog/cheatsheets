@@ -28,6 +28,8 @@ key: value
 
 * [Trunk Code Quality](https://marketplace.visualstudio.com/items?itemName=Trunk.io)
   * [Trunk IO](https://trunk.io/)
+* [Mega Linter](https://megalinter.io/latest/)
+* [Precommit](https://pre-commit.com/)
 * [Githooks](https://marketplace.visualstudio.com/items?itemName=lakshmikanthayyadevara.githooks)
   * [Githooks Vs Code](https://medium.com/womenintechnology/how-to-implement-git-hooks-with-vs-code-4e4fb185638f)
 
