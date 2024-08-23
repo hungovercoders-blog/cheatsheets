@@ -110,3 +110,7 @@ key: value
 * [Pets](https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets)
 * [power mode](https://marketplace.visualstudio.com/items?itemName=hoovercj.vscode-power-mode)
 * [QuackTrack](https://marketplace.visualstudio.com/items?itemName=2Guys1Account.quackrack-cursor)
+
+# tools
+
+[open source alternatives](https://dev.to/johnrushx/open-source-alternatives-to-tools-you-pay-for-1g9c?ref=dailydev)
