@@ -26,6 +26,7 @@ key: value
 
 * [VS Code Essentials](https://marketplace.visualstudio.com/items?itemName=Gydunhn.vsc-essentials)
 
+* [Code End of Line](https://marketplace.visualstudio.com/items?itemName=sohamkamani.code-eol)
 * [Trunk Code Quality](https://marketplace.visualstudio.com/items?itemName=Trunk.io)
   * [Trunk IO](https://trunk.io/)
 * [Mega Linter](https://megalinter.io/latest/)
