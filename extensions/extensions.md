@@ -15,6 +15,9 @@ key: value
 ## vs code
 
 * [time track pack](https://marketplace.visualstudio.com/items?itemName=thegeoffstevens.time-tracking-pack)
+* [Mark Map](https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode)
+* [Excalidraw](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor)
+* [Drawio](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
 
 ### Python
 
