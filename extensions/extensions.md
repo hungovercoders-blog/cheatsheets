@@ -103,6 +103,8 @@ key: value
 * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
 * [Databricks](https://marketplace.visualstudio.com/items?itemName=databricks.databricks)
+* [Databricks SQL](https://marketplace.visualstudio.com/items?itemName=databricks.sqltools-databricks-driver)
+  * [SQL Tools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools) 
 * [Terraform](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform)
 * [Azure Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack)
 * 
