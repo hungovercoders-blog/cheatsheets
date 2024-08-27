@@ -33,3 +33,4 @@ key: value
   * [Data Contract CLI](https://cli.datacontract.com/)
   * [Data Contract GPT](https://gpt.datacontract.com/)
 * [Open Data Product Specification](https://opendataproducts.org/)
+* [open data product specification blog](https://blog.opendataproducts.org/)
