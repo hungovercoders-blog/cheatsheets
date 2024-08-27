@@ -34,3 +34,4 @@ key: value
   * [Data Contract GPT](https://gpt.datacontract.com/)
 * [Open Data Product Specification](https://opendataproducts.org/)
 * [open data product specification blog](https://blog.opendataproducts.org/)
+* [medium data contract blog](https://medium.com/@kyyberi)
