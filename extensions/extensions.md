@@ -30,6 +30,7 @@ key: value
 
 * [VS Code Essentials](https://marketplace.visualstudio.com/items?itemName=Gydunhn.vsc-essentials)
 
+* [figjam](https://www.figma.com/figjam/)
 * [Vs code figma](https://marketplace.visualstudio.com/items?itemName=figma.figma-vscode-extension)
 
 * [Code End of Line](https://marketplace.visualstudio.com/items?itemName=sohamkamani.code-eol)
