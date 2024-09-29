@@ -12,6 +12,11 @@ key: value
 - [Python](#python)
   - [Class](#class)
   - [Test Class](#test-class)
+ 
+## Tools
+
+- [Streamlit Cheatsheet](https://docs.streamlit.io/develop/quick-reference/cheat-sheet)
+- [Streamlit Cheatsheet App](https://cheat-sheet.streamlit.app/)
 
 ## Class
 
