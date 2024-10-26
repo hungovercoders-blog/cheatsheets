@@ -24,6 +24,7 @@ key: value
 * [Google tasks](https://marketplace.visualstudio.com/items?itemName=KrishnaPravin.google-tasks)
 * [Gremline Characters](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
 * [TODO and Stepsize](https://www.stepsize.com/blog/best-vs-code-extensions-to-handle-todos)
+* [TODO list](https://marketplace.visualstudio.com/items?itemName=saber2pr.todolist)
 
 # work management
 
