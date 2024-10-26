@@ -25,6 +25,7 @@ key: value
 * [Gremline Characters](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
 * [TODO and Stepsize](https://www.stepsize.com/blog/best-vs-code-extensions-to-handle-todos)
 * [TODO list](https://marketplace.visualstudio.com/items?itemName=saber2pr.todolist)
+* [Emoji Sense](https://marketplace.visualstudio.com/items?itemName=bierner.emojisense)
 
 # work management
 
