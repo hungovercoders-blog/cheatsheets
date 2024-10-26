@@ -19,6 +19,15 @@ key: value
   * [MarkMap Online](https://markmap.js.org/)
 * [Excalidraw](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor)
 * [Drawio](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
+* [VS Code Essentials](https://marketplace.visualstudio.com/items?itemName=jabacchetta.vscode-essentials)
+* [VS Code Tasks](https://medium.com/@chhaymenghong/a-deep-dive-into-vscode-tasks-improve-your-developer-workflow-today-8a75e40e0f0a)
+* [Google tasks](https://marketplace.visualstudio.com/items?itemName=KrishnaPravin.google-tasks)
+* [Gremline Characters](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins)
+* [TODO and Stepsize](https://www.stepsize.com/blog/best-vs-code-extensions-to-handle-todos)
+
+# work management
+
+* [asana](https://asana.com/?noredirect)
 
 ### Python
 
