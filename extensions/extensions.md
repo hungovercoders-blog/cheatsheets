@@ -74,6 +74,7 @@ key: value
 * [TODO](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
 * [TODO Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
 * [Github Action TODO to Issue](https://github.com/marketplace/actions/todo-to-issue)
+* [Pomodoro](https://marketplace.visualstudio.com/items?itemName=n3rds-inc.pomodoro-timer-focus)
 
 * [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
 * [Indent Rainbow Pallette](https://marketplace.visualstudio.com/items?itemName=evondev.indent-rainbow-palettes)
